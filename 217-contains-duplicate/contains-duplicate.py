@@ -8,3 +8,6 @@ class Solution:
             seen.add(n)
         
         return False
+        
+        # Another solution: 
+        # return len(nums) != len(set(nums))
