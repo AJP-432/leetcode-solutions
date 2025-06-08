@@ -12,11 +12,7 @@ class Solution:
             count_s[ord(si) - ord("a")] += 1
             count_t[ord(ti) - ord("a")] += 1
         
-        for cs, ct in zip(count_s, count_t): 
-            if cs != ct:  
-                return False
-        
-        return True
+        return count_s == count_t
 
         # Another solution: O(n), O(n)
         # return Counter(s) == Counter(t)
