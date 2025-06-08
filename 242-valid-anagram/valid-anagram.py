@@ -1,4 +1,22 @@
-from collections import Counter
+# from collections import Counter
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        return Counter(s) == Counter(t)
+        # Solution: O(n), O(n)
+        if len(s) != len(t): 
+            return False
+
+        # 26 lowercase english chars
+        count_s = [0] * 26
+        count_t = [0] * 26
+        for si, ti in zip(s, t):
+            count_s[ord(si) - ord("a")] += 1
+            count_t[ord(ti) - ord("a")] += 1
+        
+        for cs, ct in zip(count_s, count_t): 
+            if cs != ct:  
+                return False
+        
+        return True
+
+        # Another solution: O(n), O(n)
+        # return Counter(s) == Counter(t)
