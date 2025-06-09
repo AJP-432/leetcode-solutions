@@ -6,7 +6,6 @@ class Solution:
         ps = sorted(zip(position, speed), key=lambda x: x[0])
         # Time to reach
         ttr = [(target - p) / s for p, s in ps]
-        print(ttr)
 
         stack = [] 
         for time in ttr: 
